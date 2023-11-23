@@ -1,7 +1,6 @@
 import threading
 import time
 import requests
-import const
 
 
 class ApiIOL:
@@ -52,7 +51,7 @@ class ApiIOL:
         """ Función para solicitar el token"""
         try:
             response = requests.post(
-                url=const.Urls.TOKEN,
+                url='https://api.invertironline.com/token',
                 data=body,
                 headers=self.head_token,
                 timeout=10,
