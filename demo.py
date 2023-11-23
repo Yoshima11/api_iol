@@ -22,8 +22,13 @@ print('access token:', iol.access_token)
 
 while True:
     try:
-        option = input('Ingrese \"1\" para ver estado de cuenta.\nIngrese \"2\" para ver su portafolio.\nIngrese '
-                       '\"3\" para ver cotización cedear.\nIngrese \"q\" para salir.\nopción:')
+        option = input(
+            'Ingrese \"1\" para ver estado de cuenta.\n'
+            'Ingrese \"2\" para ver su portafolio.\n'
+            'Ingrese \"3\" para ver cotización cedear.\n'
+            'Ingrese \"q\" para salir.'
+            '\nopción:'
+        )
         print('option: ', option)
         if option == 'q':
             print('Saliendo.')

@@ -79,3 +79,7 @@ class ApiIOL:
         except requests.exceptions.ConnectionError as error:
             self.get_error = True
             self.get_error_code = error
+
+    def operar(self, url, data):
+        """Falta función para poder operar"""
+        pass
