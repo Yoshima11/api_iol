@@ -7,9 +7,9 @@ class ApiIOL:
     """Api Invertir Online"""
     access_token = ''
     refresh_token = ''
-    token_error = False
+    token_error = True
     token_error_code = 0
-    get_error = False
+    get_error = True
     get_error_code = 0
 
     def __init__(self):
@@ -26,7 +26,7 @@ class ApiIOL:
             self.access_token = tokens['access_token']
             self.refresh_token = tokens['refresh_token']
             if refresh:  # Si es verdadero crea un thread que actualiza el token cada 15 minutos.
-                thread = threading.Thread(target=self.ref_token)
+                thread = threading.Thread(target=self.ref_token, daemon=True)
                 thread.start()
         except requests.exceptions.HTTPError as error:
             self.token_error = True
@@ -42,8 +42,8 @@ class ApiIOL:
         while True:
             time.sleep(900)
             body = {
-                "refresh_token": self.refresh_token,
-                "grant_type": 'refresh_token',
+                'refresh_token': self.refresh_token,
+                'grant_type': 'refresh_token',
             }
             self.req_token(body, False)
 
@@ -70,7 +70,7 @@ class ApiIOL:
             )
             try:
                 response.raise_for_status()
-                self.get_error = True
+                self.get_error = False
                 self.get_error_code = response.status_code
                 return response.json()
             except requests.exceptions.HTTPError as error:
