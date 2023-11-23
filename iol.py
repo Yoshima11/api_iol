@@ -62,7 +62,7 @@ class ApiIOL:
             self.token_error_code = error
 
     def get(self, url):
-        """ Función para realizar operaciones. En https://api.invertironline.com/ consultar operaciones disponibles"""
+        """ Función para realizar consultas. En https://api.invertironline.com/ consultar operaciones disponibles"""
         try:
             response = requests.get(
                 url=url,
