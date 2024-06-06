@@ -86,7 +86,7 @@ class ApiIOL:
         return self.get(url=url)
 
     def get_historical_price(self, mercado=constantes.Mercado.BCBA, simbolo='AL30',
-                             fecha_desde: date = date(1970, 1, 1),
+                             fecha_desde: date = date(2000, 1, 1),
                              fecha_hasta: date = date.today(),
                              ajustada='sinAjustar'):
         url = f'https://api.invertironline.com//api/v2/{mercado}/Titulos/{simbolo}/Cotizacion/seriehistorica/\
