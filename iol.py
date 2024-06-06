@@ -1,6 +1,7 @@
 import threading
 import time
 import requests
+from datetime import date
 
 
 class ApiIOL:
@@ -79,6 +80,18 @@ class ApiIOL:
         except requests.exceptions.ConnectionError as error:
             self.get_error = True
             self.get_error_code = error
+
+    def get_price(self, mercado='bCBA', simbolo=None, plazo='t1'):
+        url = f'https://api.invertironline.com//api/v2/{mercado}/Titulos/{simbolo}/CotizacionDetalleMobile/{plazo}'
+        return self.get(url=url)
+
+    def get_historical_price(self, mercado=constantes.Mercado.BCBA, simbolo='AL30',
+                             fecha_desde: date = date(1970, 1, 1),
+                             fecha_hasta: date = date.today(),
+                             ajustada='sinAjustar'):
+        url = f'https://api.invertironline.com//api/v2/{mercado}/Titulos/{simbolo}/Cotizacion/seriehistorica/\
+              {fecha_desde.strftime('%Y-%m-%d')}/{fecha_hasta.strftime('%Y-%m-%d')}/{ajustada}'
+        return self.get(url=url)
 
     def operar(self, url, data):
         """Falta función para poder operar"""

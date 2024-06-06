@@ -26,8 +26,8 @@ while True:
             'Ingrese \"1\" para ver estado de cuenta.\n'
             'Ingrese \"2\" para ver su portafolio.\n'
             'Ingrese \"3\" para ver cotización cedear.\n'
-            'Ingrese \"q\" para salir.'
-            '\nopción:'
+            'Ingrese \"q\" para salir.\n'
+            'opción:'
         )
         print('option: ', option)
         if option == 'q':

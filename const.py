@@ -1,8 +1,15 @@
 class Urls:
+    def __init__(self):
+        pass
+
     BASE = 'https://api.invertironline.com/api/v2'
     TOKEN = 'https://api.invertironline.com/token'
 
+
 class Mercado:
+    def __init__(self):
+        pass
+
     BCBA = 'bCBA'
     NYSE = 'nYSE'
     NASDAQ = 'nASDAQ'
@@ -10,9 +17,11 @@ class Mercado:
     BCS = 'bCS'
     ROFX = 'rOFX'
 
+
 class Pais:
     ARG = 'argentina'
     USA = 'estados_Unidos'
+
 
 class Instrumento:
     class ARG:
@@ -28,6 +37,7 @@ class Instrumento:
         BONOS = "Bonos"
         ETFS = "Etfs"
         MONEDAS = "Monedas"
+
 
 class Panel:
     class ARG:
@@ -105,20 +115,24 @@ class Panel:
             CORPORATIVOS_ARS = "Bonos corporativos en pesos"
             CORPORATIVOS_USD = "Bonos corporativos en dólares"
 
+
 class Ajustada:
     AJUSTADA = "ajustada"
     SIN_AJUSTAR = "sinAjustar"
+
 
 class Plazo:
     T0 = 't0'
     T1 = 't1'
     T2 = 't2'
 
+
 class Administradora:
     CONVEXITY = "CONVEXITY"
     SUPERVIELLE = "SUPERVIELLE"
     # ALLARIA = "Allaria"
     # ALLIANCE_BERNSTEIN = "ALLIANCE BERNSTEIN"
+
 
 class TipoFondo:
     PLAZO_FIJO_PESOS = "plazo_fijo_pesos"
@@ -130,9 +144,11 @@ class TipoFondo:
     RENTA_MIXTA_DOLARES = "renta_mixta_dolares"
     RENTA_VARIABLE_DOLARES = "renta_variable_dolares"
 
+
 class TipoDeOrden:
     PRECIO_LIMITE = 'precioLimite'
     PRECIO_MERCADO = 'precioMercado'
+
 
 class Tarifas:
     GOLD = 0.005
